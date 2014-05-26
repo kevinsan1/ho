@@ -1,0 +1,9 @@
+PWD /Users/kevin/SkyDrive/KTH Work/LaTeX Reports/Heat Equation/Sections
+INPUT /usr/local/texlive/2013/texmf.cnf
+INPUT /usr/local/texlive/2013/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2013/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT TwoDHeatEquation.tex
+OUTPUT TwoDHeatEquation.log
+INPUT /usr/local/texlive/2013/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2013/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm

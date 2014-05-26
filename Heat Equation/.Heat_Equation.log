@@ -1,0 +1,192 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=.Heat_Equation 2014.2.25)  25 FEB 2014 00:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**&.Heat_Equation "./.Heat_Equation.tex"
+(./.Heat_Equation.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(./.Heat_Equation.aux)
+\openout1 = `.Heat_Equation.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count118
+\scratchdimen=\dimen133
+\scratchbox=\box28
+\nofMPsegments=\count119
+\nofMParguments=\count120
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen134
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring ON on input line 45.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count124
+)
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
+(./.Heat_Equation.out) (./.Heat_Equation.out)
+\@outlinefile=\write3
+\openout3 = `.Heat_Equation.out'.
+
+(./Sections/Section1.tex) (./Sections/Section2.tex
+Package epstopdf Info: Source file: <Figures/gridForNumericalSchemePlot.eps>
+(epstopdf)                    date: 2014-02-23 19:05:54
+(epstopdf)                    size: 132972 bytes
+(epstopdf)             Output file: <Figures/gridForNumericalSchemePlot-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2014-02-23 19:05:56
+(epstopdf)                    size: 8924 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/gridForNumericalSc
+hemePlot-eps-converted-to.pdf Figures/gridForNumericalSchemePlot.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/gridForNumericalSchemePlot-eps-converted-to.pdf, id=17, 473.77pt x 399
+.4925pt>
+File: Figures/gridForNumericalSchemePlot-eps-converted-to.pdf Graphic file (typ
+e pdf)
+<use Figures/gridForNumericalSchemePlot-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/gridForNumericalSchemePlot-eps-converted-to.pd
+f used on input line 11.
+(pdftex.def)             Requested size: 424.32236pt x 357.80873pt.
+[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <.
+/Figures/gridForNumericalSchemePlot-eps-converted-to.pdf>]
+Overfull \hbox (4.8845pt too wide) in paragraph at lines 87--87
+[] 
+ []
+
+[3]) (./Sections/Section3.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
+Package epstopdf Info: Source file: <Figures/SourceFunction.eps>
+(epstopdf)                    date: 2014-02-24 23:56:16
+(epstopdf)                    size: 6154500 bytes
+(epstopdf)             Output file: <Figures/SourceFunction-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2014-02-24 23:56:17
+(epstopdf)                    size: 42675 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/SourceFunction-eps
+-converted-to.pdf Figures/SourceFunction.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/SourceFunction-eps-converted-to.pdf, id=85, 513.92pt x 394.47375pt>
+File: Figures/SourceFunction-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/SourceFunction-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/SourceFunction-eps-converted-to.pdf used on in
+put line 7.
+(pdftex.def)             Requested size: 330.0293pt x 253.32909pt.
+Package epstopdf Info: Source file: <Figures/deltaFunctionPlot.eps>
+(epstopdf)                    date: 2014-02-25 00:10:52
+(epstopdf)                    size: 6154503 bytes
+(epstopdf)             Output file: <Figures/deltaFunctionPlot-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2014-02-25 00:10:53
+(epstopdf)                    size: 47708 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/deltaFunctionPlot-
+eps-converted-to.pdf Figures/deltaFunctionPlot.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+<Figures/deltaFunctionPlot-eps-converted-to.pdf, id=86, 501.875pt x 393.47pt>
+File: Figures/deltaFunctionPlot-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/deltaFunctionPlot-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/deltaFunctionPlot-eps-converted-to.pdf used on
+ input line 13.
+(pdftex.def)             Requested size: 330.0293pt x 258.7544pt.
+) [4 <./Figures/SourceFunction-eps-converted-to.pdf>] (./Sections/heat_equation
+1DL.tex
+! Undefined control sequence.
+l.6 \chapter
+            {Appendix} % (fold)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[5 <./Figures/deltaFunctionPlot-eps-converted-to.pdf>]) (./Sections/TwoDHeatEqu
+ation.tex [6] [7]) (./.Heat_Equation.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+(./.Heat_Equation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+Package rerunfilecheck Info: File `.Heat_Equation.out' has not changed.
+(rerunfilecheck)             Checksum: 556BC9EF27BFD63A6D2030DDB417C219;527.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
+ ) 
+Here is how much of TeX's memory you used:
+ 728 strings out of 484662
+ 11387 string characters out of 6018415
+ 209343 words of memory out of 5000000
+ 12699 multiletter control sequences out of 15000+600000
+ 10156 words of font info for 37 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 28i,10n,28p,648b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on .Heat_Equation.pdf (8 pages, 292625 bytes).
+PDF statistics:
+ 220 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 40 words of extra memory for PDF output out of 10000 (max. 10000000)
+
