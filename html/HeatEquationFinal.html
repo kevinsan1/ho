@@ -1,0 +1,276 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HeatEquationFinal</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-05-28"><meta name="DC.source" content="HeatEquationFinal.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Heat_equation</a></li><li><a href="#2">Parameters</a></li><li><a href="#3">Initialize Source function</a></li><li><a href="#4">Initialize Q-matrix</a></li><li><a href="#5">Compute matrix A</a></li><li><a href="#6">Initialize loop and plot variables</a></li><li><a href="#7">Main loops</a></li><li><a href="#8">Reshape Q for plotting</a></li><li><a href="#9">look at dx*dy*Qij for Conservation</a></li><li><a href="#11">Print Plots</a></li><li><a href="#12">Plot 1</a></li></ul></div><h2>Heat_equation<a name="1"></a></h2><pre class="codeinput"><span class="comment">%- Program to solve the diffusion equation</span>
+<span class="comment">% using the Backward Euler method</span>
+</pre><h2>Parameters<a name="2"></a></h2><pre class="codeinput">clear <span class="string">all</span>;close <span class="string">all</span>;clc;
+saveFigurePath = [<span class="string">'/Users/kevin/SkyDrive/KTH Work/'</span> <span class="keyword">...</span>
+<span class="string">'Period 3 2014/DN2255/Homework/1/Heat Equation/Figures/'</span>];
+N = 100; <span class="comment">% Number of grid points</span>
+L = 1; <span class="comment">% The system extends from (x)=(0) to (x)=(L)</span>
+h = L/N;
+i = 1:(N); <span class="comment">% 1:N</span>
+[x,y] = meshgrid(h/2:h:L,h/2:h:L);
+w = 0.2;
+xs = 0.5;
+ys = 0.5;
+tfinal = .5;
+tau = .005*h;
+coeff = tau/h^2;
+tsteps = ceil(tfinal/tau);
+time = linspace(0,tfinal,tsteps);
+</pre><h2>Initialize Source function<a name="3"></a></h2><pre class="codeinput">xExponent = (x-xs).^2;
+yExponent = (y-ys).^2;
+S = exp(-(xExponent)/w^2).*exp(-yExponent/w^2);
+deltaFunction = zeros(N);
+deltaFunction(round(N/2),round(N/2))=2;
+S = deltaFunction;
+S = reshape(S,[N^2,1]);
+</pre><h2>Initialize Q-matrix<a name="4"></a></h2><pre class="codeinput">Q = zeros(N^2,1);
+</pre><h2>Compute matrix A<a name="5"></a></h2><pre class="codeinput">TN = 2*eye(N) - diag(ones(N-1,1),1) - diag(ones(N-1,1),-1);
+TNxN = kron(eye(N),TN) + kron(TN,eye(N));
+dM = eye(N^2) + coeff*TNxN;
+sparsedM = sparse(dM);
+</pre><h2>Initialize loop and plot variables<a name="6"></a></h2><pre class="codeinput">Qplot(:,1) = Q; <span class="comment">% initial value</span>
+stepNumber=round(.25/tau);
+</pre><h2>Main loops<a name="7"></a></h2><pre class="codeinput"><span class="keyword">for</span> iter=1:stepNumber
+    Q = sparsedM\Q + S;
+    Qplot(:,iter+1) = Q(:);
+<span class="keyword">end</span>
+<span class="comment">% Loop after source is gone</span>
+<span class="keyword">for</span> iter2=(iter+2):tsteps
+    Q = sparsedM\Q;
+    Qplot(:,iter2) = Q(:);
+<span class="keyword">end</span>
+</pre><h2>Reshape Q for plotting<a name="8"></a></h2><pre class="codeinput">Qresh = reshape(Qplot,[N,N,tsteps])
+</pre><h2>look at dx*dy*Qij for Conservation<a name="9"></a></h2><pre class="codeinput">cons(1:tsteps,1) = h^2*sum(sum(Qresh(:,:,1:end)));
+figure(1);
+plot(tau*(1:length(cons)),cons);
+tL=title(<span class="string">'\Deltax \Deltay Q_{i,j} vs time'</span>);
+xL = xlabel(<span class="string">'time (sec)'</span>);
+yL = ylabel(<span class="string">'\Deltax \Deltay Q_{i,j}'</span>);
+    set( gca                       , <span class="keyword">...</span>
+        <span class="string">'FontName'</span>   , <span class="string">'Helvetica'</span> );
+    set([tL,xL,yL], <span class="keyword">...</span>
+        <span class="string">'FontName'</span>   , <span class="string">'AvantGarde'</span>);
+    set( gca             , <span class="keyword">...</span>
+        <span class="string">'FontSize'</span>   , 8           );
+    set([xL,yL]  , <span class="keyword">...</span>
+        <span class="string">'FontSize'</span>   , 10          );
+    set( tL                    , <span class="keyword">...</span>
+        <span class="string">'FontSize'</span>   , 12          , <span class="keyword">...</span>
+        <span class="string">'FontWeight'</span> , <span class="string">'bold'</span>      );
+    set(gca, <span class="keyword">...</span>
+        <span class="string">'Box'</span>         , <span class="string">'off'</span>         , <span class="keyword">...</span>
+        <span class="string">'TickDir'</span>     , <span class="string">'out'</span>         , <span class="keyword">...</span>
+        <span class="string">'TickLength'</span>  , [.02 .02]     , <span class="keyword">...</span>
+        <span class="string">'XMinorTick'</span>  , <span class="string">'on'</span>          , <span class="keyword">...</span>
+        <span class="string">'YMinorTick'</span>  , <span class="string">'on'</span>          , <span class="keyword">...</span>
+        <span class="string">'XColor'</span>      , [.3 .3 .3]    , <span class="keyword">...</span>
+        <span class="string">'YColor'</span>      , [.3 .3 .3]    , <span class="keyword">...</span>
+        <span class="string">'LineWidth'</span>   , 1             );
+    printYesNo1 = 1;
+<span class="keyword">if</span> printYesNo1 == 1
+set(figure(1), <span class="string">'PaperPositionMode'</span>, <span class="string">'auto'</span>);
+print(<span class="string">'-depsc2'</span>, [saveFigurePath <span class="keyword">...</span>
+    sprintf(<span class="string">'deltaConservationPlot'</span>)]);
+<span class="keyword">end</span>
+</pre><p>figure(1);clf; for i = 1:tsteps     surf(x,y,Qresh(:,:,i))     title(sprintf('%g',time(i)));     axis([0 1 0 1 0 max(max(Qplot))]);     hold off;     pause(0.02) end</p><h2>Print Plots<a name="11"></a></h2><pre class="codeinput">fin = length(Qplot(1,:));
+maxZ = max(max(max(Qresh)));
+<span class="comment">%     n1 = [1 ceil(.25/(2*tau)) ceil(.25/tau)...</span>
+<span class="comment">%        ceil(.25/tau)+5 ceil(.25/tau)+20 ceil(.25/tau)+50];</span>
+n1 = [1 floor(fin*6/24) floor(fin*12/24)<span class="keyword">...</span>
+    floor(fin*13/24) floor(fin*14/24) floor(fin*15/24)];
+plotMyFigure(L, N, Q, Qplot, Qresh, S, TN,  <span class="keyword">...</span>
+TNxN, coeff, cons, dM,  <span class="keyword">...</span>
+deltaFunction, fin, h, i, iter, iter2,  <span class="keyword">...</span>
+maxZ, n1, sparsedM, stepNumber, tau,  <span class="keyword">...</span>
+tfinal, time, tsteps, w, x, xExponent,  <span class="keyword">...</span>
+xL, xs, y, yExponent, yL, ys)
+</pre><h2>Plot 1<a name="12"></a></h2><pre class="codeinput">printYesNo = 0;
+<span class="keyword">if</span> printYesNo == 1
+set(figure(2), <span class="string">'PaperPositionMode'</span>, <span class="string">'auto'</span>);
+print(<span class="string">'-depsc2'</span>, [saveFigurePath <span class="keyword">...</span>
+    sprintf(<span class="string">'deltaFunctionPlot'</span>)]);
+<span class="keyword">end</span>
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Heat_equation 
+%- Program to solve the diffusion equation
+% using the Backward Euler method
+%% Parameters
+clear all;close all;clc;
+saveFigurePath = ['/Users/kevin/SkyDrive/KTH Work/' ...
+'Period 3 2014/DN2255/Homework/1/Heat Equation/Figures/'];
+N = 100; % Number of grid points
+L = 1; % The system extends from (x)=(0) to (x)=(L)
+h = L/N;
+i = 1:(N); % 1:N
+[x,y] = meshgrid(h/2:h:L,h/2:h:L);
+w = 0.2;
+xs = 0.5;
+ys = 0.5;
+tfinal = .5;
+tau = .005*h;
+coeff = tau/h^2;
+tsteps = ceil(tfinal/tau);
+time = linspace(0,tfinal,tsteps);
+%% Initialize Source function
+xExponent = (x-xs).^2;
+yExponent = (y-ys).^2;
+S = exp(-(xExponent)/w^2).*exp(-yExponent/w^2);
+deltaFunction = zeros(N);
+deltaFunction(round(N/2),round(N/2))=2;
+S = deltaFunction;
+S = reshape(S,[N^2,1]);
+%% Initialize Q-matrix
+Q = zeros(N^2,1); 
+%% Compute matrix A
+TN = 2*eye(N) - diag(ones(N-1,1),1) - diag(ones(N-1,1),-1);
+TNxN = kron(eye(N),TN) + kron(TN,eye(N));
+dM = eye(N^2) + coeff*TNxN;
+sparsedM = sparse(dM);
+%% Initialize loop and plot variables
+Qplot(:,1) = Q; % initial value
+stepNumber=round(.25/tau);
+%% Main loops
+for iter=1:stepNumber
+    Q = sparsedM\Q + S;
+    Qplot(:,iter+1) = Q(:);
+end
+% Loop after source is gone
+for iter2=(iter+2):tsteps
+    Q = sparsedM\Q;
+    Qplot(:,iter2) = Q(:);
+end
+%% Reshape Q for plotting
+Qresh = reshape(Qplot,[N,N,tsteps])
+%% look at dx*dy*Qij for Conservation
+cons(1:tsteps,1) = h^2*sum(sum(Qresh(:,:,1:end)));
+figure(1);
+plot(tau*(1:length(cons)),cons);
+tL=title('\Deltax \Deltay Q_{i,j} vs time');
+xL = xlabel('time (sec)');
+yL = ylabel('\Deltax \Deltay Q_{i,j}');
+    set( gca                       , ...
+        'FontName'   , 'Helvetica' );
+    set([tL,xL,yL], ...
+        'FontName'   , 'AvantGarde');
+    set( gca             , ...
+        'FontSize'   , 8           );
+    set([xL,yL]  , ...
+        'FontSize'   , 10          );
+    set( tL                    , ...
+        'FontSize'   , 12          , ...
+        'FontWeight' , 'bold'      );
+    set(gca, ...
+        'Box'         , 'off'         , ...
+        'TickDir'     , 'out'         , ...
+        'TickLength'  , [.02 .02]     , ...
+        'XMinorTick'  , 'on'          , ...
+        'YMinorTick'  , 'on'          , ...
+        'XColor'      , [.3 .3 .3]    , ...
+        'YColor'      , [.3 .3 .3]    , ...
+        'LineWidth'   , 1             );
+    printYesNo1 = 1;
+if printYesNo1 == 1
+set(figure(1), 'PaperPositionMode', 'auto');
+print('-depsc2', [saveFigurePath ...
+    sprintf('deltaConservationPlot')]);
+end
+%%
+% figure(1);clf;
+% for i = 1:tsteps
+%     surf(x,y,Qresh(:,:,i))
+%     title(sprintf('%g',time(i)));
+%     axis([0 1 0 1 0 max(max(Qplot))]);
+%     hold off;
+%     pause(0.02)
+% end
+%% Print Plots
+fin = length(Qplot(1,:));
+maxZ = max(max(max(Qresh)));
+%     n1 = [1 ceil(.25/(2*tau)) ceil(.25/tau)...
+%        ceil(.25/tau)+5 ceil(.25/tau)+20 ceil(.25/tau)+50];
+n1 = [1 floor(fin*6/24) floor(fin*12/24)...
+    floor(fin*13/24) floor(fin*14/24) floor(fin*15/24)];
+plotMyFigure(L, N, Q, Qplot, Qresh, S, TN,  ...
+TNxN, coeff, cons, dM,  ...
+deltaFunction, fin, h, i, iter, iter2,  ...
+maxZ, n1, sparsedM, stepNumber, tau,  ...
+tfinal, time, tsteps, w, x, xExponent,  ...
+xL, xs, y, yExponent, yL, ys)
+%% Plot 1
+printYesNo = 0;
+if printYesNo == 1
+set(figure(2), 'PaperPositionMode', 'auto');
+print('-depsc2', [saveFigurePath ...
+    sprintf('deltaFunctionPlot')]);
+end
+
+##### SOURCE END #####
+--></body></html>

@@ -102,6 +102,25 @@ where $\Delta x = x_{i+1/2}-x_{i-1/2}$ and $\Delta y = y_{j+1/2}-y_{j-1/2}$
 		
 		Near an x or y boundary, one term from that respective derivative will cancel with the $2 \delta_i,j$ term.  For example, when $i=0$, $\mathbf{T_{x}}$ will become $\frac{1}{\Delta x^2}( \delta_{i+1} - \delta_{i})$ because the $\delta_{i-1}$ term will cancel with a $\delta_{i}$ term because of boundary conditions.
 	\end{itemize}
+	
+	\item {\color{blue} The method was implemented using the operator matrix $\mathbf{A}$ \cite{Demmel:1997:ANL:264989} and is generated at line 1 in the code.  The sparse function was also used on the matrix to save computational power and time
+	\begin{equation}
+			A = \left[
+			\begin{tabular}{ccc|ccc|ccc}
+			4  & -1 & 0		& -1 & 0 & 0 	& 0 & 0 & 0\\
+			-1 & 4  & -1 	& 0 & -1 & 0 	& 0 & 0 & 0\\
+			0  & -1 & 4  	& 0 & 0 & -1 	& 0 & 0 & 0\\
+			\midrule
+			-1 & 0  & 0  	& 4 & -1 & 0 	& -1 & 0 & 0\\
+			0  & -1 & 0  	& -1 & 4 & -1 	& 0 & -1 & 0\\
+			0  & 0  & -1 	& 0 & -1 & 4 	& 0 & 0 & -1\\
+			\midrule
+			0  & 0  & 0  	& -1 & 0 & 0 	& 4 & -1 & 0\\
+			0  & 0  & 0  	& 0 & -1 & 0 	& -1 & 4 & -1\\
+			0  & 0  & 0  	& 0 & 0 & -1 	& 0 & -1 & 4\\
+			\end{tabular}\right]
+			\label{eq:matrixA}
+		\end{equation}}
 \end{enumerate}
 
 % section discretization_and_implementation (end)

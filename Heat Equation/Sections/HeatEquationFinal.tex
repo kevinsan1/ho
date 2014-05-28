@@ -1,7 +1,32 @@
-%% Heat_equation 
+\subsection*{Contents}
+
+\begin{itemize}
+\setlength{\itemsep}{-1ex}
+   \item Heat\_equation
+   \item Parameters
+   \item Initialize Source function
+   \item Initialize Q-matrix
+   \item Compute matrix A
+   \item Initialize loop and plot variables
+   \item Main loops
+   \item Reshape Q for plotting
+   \item look at dx*dy*Qij for Conservation
+   \item Print Plots
+   \item Plot 1
+\end{itemize}
+
+
+\subsection*{Heat\_equation}
+
+\begin{verbatim}
 %- Program to solve the diffusion equation
 % using the Backward Euler method
-%% Parameters
+\end{verbatim}
+
+
+\subsection*{Parameters}
+
+\begin{verbatim}
 clear all;close all;clc;
 saveFigurePath = ['/Users/kevin/SkyDrive/KTH Work/' ...
 'Period 3 2014/DN2255/Homework/1/Heat Equation/Figures/'];
@@ -18,7 +43,12 @@ tau = .005*h;
 coeff = tau/h^2;
 tsteps = ceil(tfinal/tau);
 time = linspace(0,tfinal,tsteps);
-%% Initialize Source function
+\end{verbatim}
+
+
+\subsection*{Initialize Source function}
+
+\begin{verbatim}
 xExponent = (x-xs).^2;
 yExponent = (y-ys).^2;
 S = exp(-(xExponent)/w^2).*exp(-yExponent/w^2);
@@ -26,17 +56,37 @@ deltaFunction = zeros(N);
 deltaFunction(round(N/2),round(N/2))=2;
 S = deltaFunction;
 S = reshape(S,[N^2,1]);
-%% Initialize Q-matrix
-Q = zeros(N^2,1); 
-%% Compute matrix A
+\end{verbatim}
+
+
+\subsection*{Initialize Q-matrix}
+
+\begin{verbatim}
+Q = zeros(N^2,1);
+\end{verbatim}
+
+
+\subsection*{Compute matrix A}
+
+\begin{verbatim}
 TN = 2*eye(N) - diag(ones(N-1,1),1) - diag(ones(N-1,1),-1);
 TNxN = kron(eye(N),TN) + kron(TN,eye(N));
 dM = eye(N^2) + coeff*TNxN;
 sparsedM = sparse(dM);
-%% Initialize loop and plot variables
+\end{verbatim}
+
+
+\subsection*{Initialize loop and plot variables}
+
+\begin{verbatim}
 Qplot(:,1) = Q; % initial value
 stepNumber=round(.25/tau);
-%% Main loops
+\end{verbatim}
+
+
+\subsection*{Main loops}
+
+\begin{verbatim}
 for iter=1:stepNumber
     Q = sparsedM\Q + S;
     Qplot(:,iter+1) = Q(:);
@@ -46,9 +96,19 @@ for iter2=(iter+2):tsteps
     Q = sparsedM\Q;
     Qplot(:,iter2) = Q(:);
 end
-%% Reshape Q for plotting
+\end{verbatim}
+
+
+\subsection*{Reshape Q for plotting}
+
+\begin{verbatim}
 Qresh = reshape(Qplot,[N,N,tsteps])
-%% look at dx*dy*Qij for Conservation
+\end{verbatim}
+
+
+\subsection*{look at dx*dy*Qij for Conservation}
+
+\begin{verbatim}
 cons(1:tsteps,1) = h^2*sum(sum(Qresh(:,:,1:end)));
 figure(1);
 plot(tau*(1:length(cons)),cons);
@@ -81,16 +141,15 @@ set(figure(1), 'PaperPositionMode', 'auto');
 print('-depsc2', [saveFigurePath ...
     sprintf('deltaConservationPlot')]);
 end
-%%
-% figure(1);clf;
-% for i = 1:tsteps
-%     surf(x,y,Qresh(:,:,i))
-%     title(sprintf('%g',time(i)));
-%     axis([0 1 0 1 0 max(max(Qplot))]);
-%     hold off;
-%     pause(0.02)
-% end
-%% Print Plots
+\end{verbatim}
+\begin{par}
+figure(1);clf; for i = 1:tsteps     surf(x,y,Qresh(:,:,i))     title(sprintf('\%g',time(i)));     axis([0 1 0 1 0 max(max(Qplot))]);     hold off;     pause(0.02) end
+\end{par} \vspace{1em}
+
+
+\subsection*{Print Plots}
+
+\begin{verbatim}
 fin = length(Qplot(1,:));
 maxZ = max(max(max(Qresh)));
 %     n1 = [1 ceil(.25/(2*tau)) ceil(.25/tau)...
@@ -103,10 +162,18 @@ deltaFunction, fin, h, i, iter, iter2,  ...
 maxZ, n1, sparsedM, stepNumber, tau,  ...
 tfinal, time, tsteps, w, x, xExponent,  ...
 xL, xs, y, yExponent, yL, ys)
-%% Plot 1
+\end{verbatim}
+
+
+\subsection*{Plot 1}
+
+\begin{verbatim}
 printYesNo = 0;
 if printYesNo == 1
 set(figure(2), 'PaperPositionMode', 'auto');
 print('-depsc2', [saveFigurePath ...
     sprintf('deltaFunctionPlot')]);
 end
+\end{verbatim}
+
+    
