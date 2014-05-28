@@ -1,17 +1,33 @@
-%!TEX root = /Users/kevin/SkyDrive/KTH Work/LaTeX Reports/Heat Equation/Heat Equation.tex
-\begin{itemize}
-	\item Solution plots.  Figure~\ref{fig:Figures_SourceFunction} shows the plot of the temperature of a constant source function  Figure~\ref{fig:Figures_deltaFunctionPlot} shows the temperature of a delta function at the center and is shut off after 0.25 seconds.
-\end{itemize}
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=.7\textwidth]{Figures/SourceFunction.eps}
-	\caption{Temperature with a constant source function}
-	\label{fig:Figures_SourceFunction}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=.7\textwidth]{Figures/deltaFunctionPlot.eps}
-	\caption{Temperature with a delta function at the center for 0.25 seconds before it is shut off.}
-	\label{fig:Figures_deltaFunctionPlot}
-\end{figure}
-		
+%!TEX root = /Users/kevin/SkyDrive/KTH Work/Period 3 2014/DN2255/Homework/1/Heat Equation/Heat Equation.tex
+
+\section{Numerical results} % (fold)
+\label{sec:numerical_results}
+
+\begin{enumerate}
+	\item \textbf{Solution plots: Show plots of the solution for some time levels before and after t = 1/4, for \textbf{both} source functions S.} 
+	
+	Figures~\ref{fig:Figures_deltaFunctionPlot} and \ref{fig:Figures_exponentialFunctionPlot} are plots of the solution with a delta function and Gaussian function, Equation~\eqref{eq:sourceFunction},  as source terms. For both of these plots, space discretization was $m=n=100$ and time discretization was $dt=1e-4$ seconds.
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=\textwidth]{Figures/deltaFunctionPlot.eps}
+		\caption{Results with a delta function at the center as a source.}
+		\label{fig:Figures_deltaFunctionPlot}
+	\end{figure} % (fig:Figures_deltaFunctionPlot)
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=\textwidth]{Figures/exponentialFunctionPlot.eps}
+		\caption{Results with Equation~\eqref{eq:sourceFunction} as the source function.}
+		\label{fig:Figures_exponentialFunctionPlot}
+	\end{figure} % (fig:Figures_exponentialFunctionPlot)
+	\item \textbf{Numerical Conservation}: Demonstrate that the method is numerically conservative by looking at 
+	\begin{equation}
+		\int q \mathrm{~d}x \mathrm{d}y = \Delta x \Delta y \sum Q_{ij}
+		\label{eq:numConservation}
+	\end{equation} % (eq:numconservation)
+	\begin{itemize}
+		\item[i.] \textbf{Time-discretization and how your code handles the discontiunuity in g(t)}
+		\item \textbf{Space-discretization; where in the cell does (x,y)=(1/2,1/2) appear? different for odd and even m,n}
+		The cell (1/2, 1/2) appears only for odd values of m,n and is at $(m+1)/2$.  For example, if $m=n=11$, then $(x_{6},y_{6}) = (1/2,1/2)$.
+	\end{itemize}
+\end{enumerate}
+% section numerical_results (end)

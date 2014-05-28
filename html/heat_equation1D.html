@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>heat_equation1D</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-02-25"><meta name="DC.source" content="heat_equation1D.m"><style type="text/css">
+      --><title>heat_equation1D</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-05-28"><meta name="DC.source" content="heat_equation1D.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -65,224 +65,215 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Initialize Source function</a></li><li><a href="#3">* Set up the Laplacian operator matrix</a></li><li><a href="#4">* Initialize Q-matrix</a></li><li><a href="#5">* Compute A-matrix (Tn+1)=ATn</a></li><li><a href="#6">* Initialize loop and plot variables</a></li><li><a href="#7">* Loop over desired number of steps</a></li><li><a href="#8">Plot</a></li></ul></div><pre class="codeinput"><span class="comment">% heat_equation - Program to solve the diffusion equation</span>
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">heat_equation</a></li><li><a href="#2">Parameters</a></li><li><a href="#3">Initialize Source function</a></li><li><a href="#4">* Initialize Q-matrix</a></li><li><a href="#5">* Compute A-matrix (Tn+1)=ATn</a></li><li><a href="#6">Initialize loop and plot variables</a></li><li><a href="#7">Main loops</a></li><li><a href="#8">look at dx*dy*Qij for Conservation</a></li><li><a href="#10">Print Plots</a></li><li><a href="#11">Plot 1</a></li></ul></div><h2>heat_equation<a name="1"></a></h2><pre class="codeinput"><span class="comment">%- Program to solve the diffusion equation</span>
 <span class="comment">% using the Backward Euler method</span>
-clear; help <span class="string">heat_equation</span>; <span class="comment">% Clear memory and print header</span>
-
+</pre><h2>Parameters<a name="2"></a></h2><pre class="codeinput">clear <span class="string">all</span>; help <span class="string">heat_equation</span>; <span class="comment">% Clear memory and print header</span>
+close <span class="string">all</span>;clc;
+saveFigurePath = [<span class="string">'/Users/kevin/SkyDrive/KTH Work/'</span> <span class="keyword">...</span>
+<span class="string">'Period 3 2014/DN2255/Homework/1/Heat Equation/Figures/'</span>];
 <span class="comment">%* Initialize parameters (time step, grid spacing, etc.)</span>
-tau = 1e-4; <span class="comment">% Enter time step</span>
-N = 100; <span class="comment">% Number of grid points</span>
+N = 50; <span class="comment">% Number of grid points</span>
 L = 1; <span class="comment">% The system extends from (x)=(0) to (x)=(L)</span>
 h = L/N;
-i = 0:(N-1);
-x = h/2 + i*h;
+i = 1:(N); <span class="comment">% 1:N</span>
+[x,y] = meshgrid(h/2:h:L,h/2:h:L);
 w = 0.2;
 xs = 0.5;
 ys = 0.5;
-</pre><pre class="codeoutput">  heat_equation - Program to solve the diffusion equation
-  using the Backward Euler method
-
-</pre><h2>Initialize Source function<a name="2"></a></h2><pre class="codeinput">S = zeros(N); <span class="comment">% Set all elements to zero</span>
-xExponent = (x'-xs).^2;
-S = exp(-xExponent/w^2)
-deltaFunction = zeros(N,1);
-deltaFunction(round(N/2))=2;
-</pre><pre class="codeoutput">
-S =
-
-    0.0022
-    0.0028
-    0.0036
-    0.0045
-    0.0057
-    0.0071
-    0.0088
-    0.0109
-    0.0135
-    0.0166
-    0.0202
-    0.0246
-    0.0297
-    0.0358
-    0.0428
-    0.0510
-    0.0605
-    0.0713
-    0.0837
-    0.0977
-    0.1135
-    0.1313
-    0.1510
-    0.1728
-    0.1968
-    0.2230
-    0.2514
-    0.2821
-    0.3149
-    0.3497
-    0.3865
-    0.4250
-    0.4650
-    0.5063
-    0.5485
-    0.5912
-    0.6341
-    0.6766
-    0.7185
-    0.7591
-    0.7980
-    0.8347
-    0.8688
-    0.8998
-    0.9272
-    0.9506
-    0.9698
-    0.9845
-    0.9944
-    0.9994
-    0.9994
-    0.9944
-    0.9845
-    0.9698
-    0.9506
-    0.9272
-    0.8998
-    0.8688
-    0.8347
-    0.7980
-    0.7591
-    0.7185
-    0.6766
-    0.6341
-    0.5912
-    0.5485
-    0.5063
-    0.4650
-    0.4250
-    0.3865
-    0.3497
-    0.3149
-    0.2821
-    0.2514
-    0.2230
-    0.1968
-    0.1728
-    0.1510
-    0.1313
-    0.1135
-    0.0977
-    0.0837
-    0.0713
-    0.0605
-    0.0510
-    0.0428
-    0.0358
-    0.0297
-    0.0246
-    0.0202
-    0.0166
-    0.0135
-    0.0109
-    0.0088
-    0.0071
-    0.0057
-    0.0045
-    0.0036
-    0.0028
-    0.0022
-
-</pre><h2>* Set up the Laplacian operator matrix<a name="3"></a></h2><pre class="codeinput">lap = zeros(N);  <span class="comment">% Set all elements to zero</span>
-coeff = 1/h^2;
-<span class="keyword">for</span> i=2:(N-1)
-    lap(i,i-1) = coeff;
-    lap(i,i) = -2*coeff;  <span class="comment">% Set interior rows</span>
-    lap(i,i+1) = coeff;
-<span class="keyword">end</span>
-<span class="comment">% Boundary conditions</span>
-lap(1,1)=-coeff;
-lap(1,2)=coeff;
-lap(N,N)=-coeff;
-lap(N,N-1)=coeff;
-</pre><h2>* Initialize Q-matrix<a name="4"></a></h2><pre class="codeinput">Q = deltaFunction;
-</pre><h2>* Compute A-matrix (Tn+1)=ATn<a name="5"></a></h2><pre class="codeinput">dM = eye(N) - tau*lap;
-</pre><h2>* Initialize loop and plot variables<a name="6"></a></h2><pre class="codeinput">max_iter = .5/tau;
-time = linspace(0,max_iter*tau,max_iter);      <span class="comment">% Record time for plots</span>
-Qplot(:,1) = Q; <span class="comment">% initial value</span>
-</pre><h2>* Loop over desired number of steps<a name="7"></a></h2><pre class="codeinput"><span class="keyword">for</span> iter=2:round(.25/tau)
-    <span class="comment">%* Compute new temperature</span>
-    Q = dM\(Q)+deltaFunction;
+tfinal = .5;
+tau = .01*h;
+coeff = tau/h^2;
+tsteps = ceil(tfinal/tau);
+</pre><h2>Initialize Source function<a name="3"></a></h2><pre class="codeinput">xExponent = (x-xs).^2;
+yExponent = (y-ys).^2;
+S = exp(-(xExponent)/w^2).*exp(-yExponent/w^2);
+deltaFunction = zeros(N);
+deltaFunction(round(N/2),round(N/2))=2;
+<span class="comment">% S = deltaFunction;</span>
+</pre><h2>* Initialize Q-matrix<a name="4"></a></h2><pre class="codeinput">S = reshape(S,[N^2,1]);
+Q = S;
+</pre><h2>* Compute A-matrix (Tn+1)=ATn<a name="5"></a></h2><p>dM = eye(N) - coeff*lap;</p><pre class="codeinput">TN = 2*eye(N) - diag(ones(N-1,1),1) - diag(ones(N-1,1),-1);
+TNxN = kron(eye(N),TN) + kron(TN,eye(N));
+dM = eye(N^2) + coeff*TNxN;
+sparsedM = sparse(dM);
+</pre><h2>Initialize loop and plot variables<a name="6"></a></h2><pre class="codeinput">Qplot(:,1) = Q; <span class="comment">% initial value</span>
+stepNumber=round(.25/tau);
+</pre><h2>Main loops<a name="7"></a></h2><pre class="codeinput"><span class="keyword">for</span> iter=1:stepNumber
+    Q = sparsedM\Q + S;
     Qplot(:,iter) = Q(:);
 <span class="keyword">end</span>
-<span class="keyword">for</span> iter=round(.25/tau):max_iter
-    <span class="comment">%* Compute new temperature</span>
-    Q = dM\(Q);
-    Qplot(:,iter) = Q(:);
+<span class="comment">% Loop after source is gone</span>
+<span class="keyword">for</span> iter2=(iter+1):tsteps
+    Q = sparsedM\Q;
+    Qplot(:,iter2) = Q(:);
 <span class="keyword">end</span>
-</pre><h2>Plot<a name="8"></a></h2><p>figure(2);clf; mesh(time,x,Qplot); xlabel('t (s)'); ylabel('x (m)'); %% Print Plots saveFigurePath = '/Users/kevin/SkyDrive/KTH Work/LaTeX Reports/Heat Equation/Figures/'; %% Plot 1 set(figure(2), 'PaperPositionMode', 'auto'); print('-depsc2', [saveFigurePath ...     sprintf('deltaFunctionPlot')]);</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+Qresh = reshape(Qplot,[N,N,tsteps]);
+time = linspace(0,tfinal,tsteps);
+</pre><h2>look at dx*dy*Qij for Conservation<a name="8"></a></h2><pre class="codeinput">cons(1:tsteps,1) = h^2*sum(sum(Qresh(:,:,1:end)));
+plot(tau*(1:length(cons)),cons);
+xL = xlabel(<span class="string">'time (sec)'</span>);
+yL = ylabel(<span class="string">'\Deltax \Deltay Q_{i,j} '</span>);
+set([xL,yL], <span class="string">'FontSize'</span>,12);
+</pre><p>figure(1);clf; for i = 1:tsteps     surf(x,y,Qresh(:,:,i))     title(sprintf('%g',time(i)));     axis([0 1 0 1 0 max(max(Qplot))]);     hold off;     pause(0.02) end</p><h2>Print Plots<a name="10"></a></h2><pre class="codeinput">fin = length(Qplot(1,:));
+maxZ = max(max(max(Qresh)))
+figure(<span class="string">'Units'</span>, <span class="string">'pixels'</span>, <span class="keyword">...</span>
+    <span class="string">'Position'</span>, [100 100 600 600]);clf
+<span class="comment">%     n1 = [1 ceil(.25/(2*tau)) ceil(.25/tau)...</span>
+<span class="comment">%        ceil(.25/tau)+5 ceil(.25/tau)+20 ceil(.25/tau)+50];</span>
+n1 = [1 floor(fin*6/24) floor(fin*12/24)<span class="keyword">...</span>
+    floor(fin*13/24) floor(fin*14/24) floor(fin*15/24)];
+<span class="comment">%     n1 = [1 floor(fin*1/2) floor(fin*3/4) fin];</span>
+<span class="keyword">for</span> i = 1:length(n1)
+    s1=subplot(3,2,i);
+    mesh(x,y,Qresh(:,:,n1(i)))
+    hTitle = title(sprintf(<span class="string">'t = %0.4f'</span>,time(n1(i))));
+    axis([0 1 0 1 0 maxZ]);
+	hXLabel = xlabel(<span class="string">'x'</span>);
+	hYLabel = ylabel(<span class="string">'y'</span>);
+	hZLabel = zlabel(<span class="string">'Q'</span>);
+	set( gca                       , <span class="keyword">...</span>
+	    <span class="string">'FontName'</span>   , <span class="string">'Helvetica'</span> );
+	set([hTitle, hXLabel, hYLabel, hZLabel], <span class="keyword">...</span>
+	    <span class="string">'FontName'</span>   , <span class="string">'AvantGarde'</span>);
+	set( gca             , <span class="keyword">...</span>
+	    <span class="string">'FontSize'</span>   , 8           );
+	set([hXLabel, hYLabel, hZLabel]  , <span class="keyword">...</span>
+	    <span class="string">'FontSize'</span>   , 10          );
+	set( hTitle                    , <span class="keyword">...</span>
+	    <span class="string">'FontSize'</span>   , 12          , <span class="keyword">...</span>
+	    <span class="string">'FontWeight'</span> , <span class="string">'bold'</span>      );
+	set(gca, <span class="keyword">...</span>
+	    <span class="string">'Box'</span>         , <span class="string">'off'</span>         , <span class="keyword">...</span>
+	    <span class="string">'TickDir'</span>     , <span class="string">'out'</span>         , <span class="keyword">...</span>
+	    <span class="string">'TickLength'</span>  , [.02 .02]     , <span class="keyword">...</span>
+	    <span class="string">'XMinorTick'</span>  , <span class="string">'on'</span>          , <span class="keyword">...</span>
+	    <span class="string">'YMinorTick'</span>  , <span class="string">'on'</span>          , <span class="keyword">...</span>
+	    <span class="string">'XColor'</span>      , [.3 .3 .3]    , <span class="keyword">...</span>
+	    <span class="string">'YColor'</span>      , [.3 .3 .3]    , <span class="keyword">...</span>
+	    <span class="string">'LineWidth'</span>   , 1             );
+<span class="keyword">end</span>
+<span class="comment">% 	hold off;</span>
+</pre><h2>Plot 1<a name="11"></a></h2><pre class="codeinput">printYesNo = 0;
+<span class="keyword">if</span> printYesNo == 1
+set(figure(1), <span class="string">'PaperPositionMode'</span>, <span class="string">'auto'</span>);
+print(<span class="string">'-depsc2'</span>, [saveFigurePath <span class="keyword">...</span>
+    sprintf(<span class="string">'exponentialFunctionPlot'</span>)]);
+<span class="keyword">end</span>
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-% heat_equation - Program to solve the diffusion equation
+%% heat_equation 
+%- Program to solve the diffusion equation
 % using the Backward Euler method
-clear; help heat_equation; % Clear memory and print header
-
+%% Parameters
+clear all; help heat_equation; % Clear memory and print header
+close all;clc;
+saveFigurePath = ['/Users/kevin/SkyDrive/KTH Work/' ...
+'Period 3 2014/DN2255/Homework/1/Heat Equation/Figures/'];
 %* Initialize parameters (time step, grid spacing, etc.)
-tau = 1e-4; % Enter time step
-N = 100; % Number of grid points
+N = 50; % Number of grid points
 L = 1; % The system extends from (x)=(0) to (x)=(L)
 h = L/N;
-i = 0:(N-1);
-x = h/2 + i*h;
+i = 1:(N); % 1:N
+[x,y] = meshgrid(h/2:h:L,h/2:h:L);
 w = 0.2;
 xs = 0.5;
 ys = 0.5;
+tfinal = .5;
+tau = .01*h;
+coeff = tau/h^2;
+tsteps = ceil(tfinal/tau);
 %% Initialize Source function
-S = zeros(N); % Set all elements to zero
-xExponent = (x'-xs).^2;
-S = exp(-xExponent/w^2)
-deltaFunction = zeros(N,1);
-deltaFunction(round(N/2))=2;
-%% * Set up the Laplacian operator matrix
-lap = zeros(N);  % Set all elements to zero
-coeff = 1/h^2;
-for i=2:(N-1)
-    lap(i,i-1) = coeff;
-    lap(i,i) = -2*coeff;  % Set interior rows
-    lap(i,i+1) = coeff;
-end
-% Boundary conditions
-lap(1,1)=-coeff;
-lap(1,2)=coeff;
-lap(N,N)=-coeff;
-lap(N,N-1)=coeff;
+xExponent = (x-xs).^2;
+yExponent = (y-ys).^2;
+S = exp(-(xExponent)/w^2).*exp(-yExponent/w^2);
+deltaFunction = zeros(N);
+deltaFunction(round(N/2),round(N/2))=2;
+% S = deltaFunction;
 %% * Initialize Q-matrix
-Q = deltaFunction;
-
+S = reshape(S,[N^2,1]);
+Q = S; 
 %% * Compute A-matrix (Tn+1)=ATn
-dM = eye(N) - tau*lap; 
-
-%% * Initialize loop and plot variables
-max_iter = .5/tau;
-time = linspace(0,max_iter*tau,max_iter);      % Record time for plots
+% dM = eye(N) - coeff*lap; 
+TN = 2*eye(N) - diag(ones(N-1,1),1) - diag(ones(N-1,1),-1);
+TNxN = kron(eye(N),TN) + kron(TN,eye(N));
+dM = eye(N^2) + coeff*TNxN;
+sparsedM = sparse(dM);
+%% Initialize loop and plot variables
 Qplot(:,1) = Q; % initial value
-%% * Loop over desired number of steps 
-for iter=2:round(.25/tau)
-    %* Compute new temperature
-    Q = dM\(Q)+deltaFunction;
+stepNumber=round(.25/tau);
+%% Main loops
+for iter=1:stepNumber
+    Q = sparsedM\Q + S;
     Qplot(:,iter) = Q(:);
 end
-for iter=round(.25/tau):max_iter
-    %* Compute new temperature
-    Q = dM\(Q);
-    Qplot(:,iter) = Q(:);
+% Loop after source is gone
+for iter2=(iter+1):tsteps
+    Q = sparsedM\Q;
+    Qplot(:,iter2) = Q(:);
 end
-%% Plot
-% figure(2);clf;
-% mesh(time,x,Qplot);
-% xlabel('t (s)'); ylabel('x (m)');
-% %% Print Plots
-% saveFigurePath = '/Users/kevin/SkyDrive/KTH Work/LaTeX Reports/Heat Equation/Figures/';
-% %% Plot 1
-% set(figure(2), 'PaperPositionMode', 'auto');
-% print('-depsc2', [saveFigurePath ...
-%     sprintf('deltaFunctionPlot')]);
+Qresh = reshape(Qplot,[N,N,tsteps]);
+time = linspace(0,tfinal,tsteps);
+%% look at dx*dy*Qij for Conservation
+cons(1:tsteps,1) = h^2*sum(sum(Qresh(:,:,1:end)));
+plot(tau*(1:length(cons)),cons);
+xL = xlabel('time (sec)');
+yL = ylabel('\Deltax \Deltay Q_{i,j} ');
+set([xL,yL], 'FontSize',12);
+%%
+% figure(1);clf;
+% for i = 1:tsteps
+%     surf(x,y,Qresh(:,:,i))
+%     title(sprintf('%g',time(i)));
+%     axis([0 1 0 1 0 max(max(Qplot))]);
+%     hold off;
+%     pause(0.02)
+% end
+%% Print Plots
+fin = length(Qplot(1,:));
+maxZ = max(max(max(Qresh)))
+figure('Units', 'pixels', ...
+    'Position', [100 100 600 600]);clf
+%     n1 = [1 ceil(.25/(2*tau)) ceil(.25/tau)...
+%        ceil(.25/tau)+5 ceil(.25/tau)+20 ceil(.25/tau)+50];
+n1 = [1 floor(fin*6/24) floor(fin*12/24)...
+    floor(fin*13/24) floor(fin*14/24) floor(fin*15/24)];
+%     n1 = [1 floor(fin*1/2) floor(fin*3/4) fin];
+for i = 1:length(n1)
+    s1=subplot(3,2,i);
+    mesh(x,y,Qresh(:,:,n1(i)))
+    hTitle = title(sprintf('t = %0.4f',time(n1(i))));
+    axis([0 1 0 1 0 maxZ]);
+	hXLabel = xlabel('x');
+	hYLabel = ylabel('y');
+	hZLabel = zlabel('Q');
+	set( gca                       , ...
+	    'FontName'   , 'Helvetica' );
+	set([hTitle, hXLabel, hYLabel, hZLabel], ...
+	    'FontName'   , 'AvantGarde');
+	set( gca             , ...
+	    'FontSize'   , 8           );
+	set([hXLabel, hYLabel, hZLabel]  , ...
+	    'FontSize'   , 10          );
+	set( hTitle                    , ...
+	    'FontSize'   , 12          , ...
+	    'FontWeight' , 'bold'      ); 
+	set(gca, ...
+	    'Box'         , 'off'         , ...
+	    'TickDir'     , 'out'         , ...
+	    'TickLength'  , [.02 .02]     , ...
+	    'XMinorTick'  , 'on'          , ...
+	    'YMinorTick'  , 'on'          , ...
+	    'XColor'      , [.3 .3 .3]    , ...
+	    'YColor'      , [.3 .3 .3]    , ...
+	    'LineWidth'   , 1             );
+end
+% 	hold off;
+%% Plot 1
+printYesNo = 0;
+if printYesNo == 1
+set(figure(1), 'PaperPositionMode', 'auto');
+print('-depsc2', [saveFigurePath ...
+    sprintf('exponentialFunctionPlot')]);
+end
 ##### SOURCE END #####
 --></body></html>
