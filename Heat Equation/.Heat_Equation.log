@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=.Heat_Equation 2014.2.25)  25 FEB 2014 00:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=.Heat_Equation 2014.5.28)  28 MAY 2014 20:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -9,35 +9,36 @@ Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (./.Heat_Equation.aux)
 \openout1 = `.Heat_Equation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+\AtBeginShipoutBox=\box30
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen133
-\scratchbox=\box28
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen134
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count124
+\scratchdimen=\dimen143
+\scratchbox=\box31
+\nofMPsegments=\count125
+\nofMParguments=\count126
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count127
+\MPscratchDim=\dimen144
+\MPnumerator=\count128
+\makeMPintoPDFobject=\count129
+\everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -51,18 +52,17 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring ON on input line 45.
+Package hyperref Info: Link coloring ON on input line 50.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count124
+\c@section@level=\count130
 )
-LaTeX Info: Redefining \ref on input line 45.
-LaTeX Info: Redefining \pageref on input line 45.
-LaTeX Info: Redefining \nameref on input line 45.
+LaTeX Info: Redefining \ref on input line 50.
+LaTeX Info: Redefining \pageref on input line 50.
+LaTeX Info: Redefining \nameref on input line 50.
 (./.Heat_Equation.out) (./.Heat_Equation.out)
 \@outlinefile=\write3
 \openout3 = `.Heat_Equation.out'.
@@ -77,116 +77,305 @@ verted-to.pdf>
 (epstopdf)                    size: 8924 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/gridForNumericalSc
 hemePlot-eps-converted-to.pdf Figures/gridForNumericalSchemePlot.eps>
-(epstopdf)             \includegraphics on input line 11.
+(epstopdf)             \includegraphics on input line 8.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/gridForNumericalSchemePlot-eps-converted-to.pdf, id=17, 473.77pt x 399
+<Figures/gridForNumericalSchemePlot-eps-converted-to.pdf, id=21, 473.77pt x 399
 .4925pt>
 File: Figures/gridForNumericalSchemePlot-eps-converted-to.pdf Graphic file (typ
 e pdf)
 <use Figures/gridForNumericalSchemePlot-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/gridForNumericalSchemePlot-eps-converted-to.pd
-f used on input line 11.
-(pdftex.def)             Requested size: 424.32236pt x 357.80873pt.
+f used on input line 8.
+(pdftex.def)             Requested size: 317.07614pt x 267.37207pt.
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <.
 /Figures/gridForNumericalSchemePlot-eps-converted-to.pdf>]
-Overfull \hbox (4.8845pt too wide) in paragraph at lines 87--87
+Overfull \hbox (11.70235pt too wide) in paragraph at lines 86--86
 [] 
  []
 
-[3]) (./Sections/Section3.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
-Package epstopdf Info: Source file: <Figures/SourceFunction.eps>
-(epstopdf)                    date: 2014-02-24 23:56:16
-(epstopdf)                    size: 6154500 bytes
-(epstopdf)             Output file: <Figures/SourceFunction-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2014-02-24 23:56:17
-(epstopdf)                    size: 42675 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figures/SourceFunction-eps
--converted-to.pdf Figures/SourceFunction.eps>
-(epstopdf)             \includegraphics on input line 7.
-Package epstopdf Info: Output file is already uptodate.
-<Figures/SourceFunction-eps-converted-to.pdf, id=85, 513.92pt x 394.47375pt>
-File: Figures/SourceFunction-eps-converted-to.pdf Graphic file (type pdf)
-<use Figures/SourceFunction-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/SourceFunction-eps-converted-to.pdf used on in
-put line 7.
-(pdftex.def)             Requested size: 330.0293pt x 253.32909pt.
+[3]
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.115 		4  & -1 & 0	&
+                      -1 & 0 & 0 	& 0 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.115 		4  & -1 & 0	& -1 & 0 & 0 	&
+                                    0 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.116 		-1 & 4  & -1 	&
+                        0 & -1 & 0 	& 0 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.116 		-1 & 4  & -1 	& 0 & -1 & 0 	&
+                                      0 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.117 		0  & -1 & 4  	&
+                        0 & 0 & -1 	& 0 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.117 		0  & -1 & 4  	& 0 & 0 & -1 	&
+                                      0 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.118 		-1 & 0  & 0  	&
+                        4 & -1 & 0 	& -1 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.118 		-1 & 0  & 0  	& 4 & -1 & 0 	&
+                                      -1 & 0 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.119 		0  & -1 & 0  	&
+                        -1 & 4 & -1 	& 0 & -1 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.119 		0  & -1 & 0  	& -1 & 4 & -1 	&
+                                       0 & -1 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.120 		0  & 0  & -1 	&
+                        0 & -1 & 4 	& 0 & 0 & -1\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.120 		0  & 0  & -1 	& 0 & -1 & 4 	&
+                                      0 & 0 & -1\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.121 		0  & 0  & 0  	&
+                        -1 & 0 & 0 	& 4 & -1 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.121 		0  & 0  & 0  	& -1 & 0 & 0 	&
+                                      4 & -1 & 0\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.122 		0  & 0  & 0  	&
+                        0 & -1 & 0 	& -1 & 4 & -1\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.122 		0  & 0  & 0  	& 0 & -1 & 0 	&
+                                      -1 & 4 & -1\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.123 		0  & 0  & 0  	&
+                        0 & 0 & -1 	& 0 & -1 & 4\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.123 		0  & 0  & 0  	& 0 & 0 & -1 	&
+                                      0 & -1 & 4\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./Sections/Section3.tex
 Package epstopdf Info: Source file: <Figures/deltaFunctionPlot.eps>
-(epstopdf)                    date: 2014-02-25 00:10:52
-(epstopdf)                    size: 6154503 bytes
+(epstopdf)                    date: 2014-05-28 19:19:51
+(epstopdf)                    size: 9422002 bytes
 (epstopdf)             Output file: <Figures/deltaFunctionPlot-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2014-02-25 00:10:53
-(epstopdf)                    size: 47708 bytes
+(epstopdf)                    date: 2014-05-28 19:22:22
+(epstopdf)                    size: 84176 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/deltaFunctionPlot-
 eps-converted-to.pdf Figures/deltaFunctionPlot.eps>
-(epstopdf)             \includegraphics on input line 13.
+(epstopdf)             \includegraphics on input line 12.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/deltaFunctionPlot-eps-converted-to.pdf, id=86, 501.875pt x 393.47pt>
+
+<Figures/deltaFunctionPlot-eps-converted-to.pdf, id=81, 510.90875pt x 538.01pt>
 File: Figures/deltaFunctionPlot-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/deltaFunctionPlot-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/deltaFunctionPlot-eps-converted-to.pdf used on
- input line 13.
-(pdftex.def)             Requested size: 330.0293pt x 258.7544pt.
-) [4 <./Figures/SourceFunction-eps-converted-to.pdf>] (./Sections/heat_equation
-1DL.tex
-! Undefined control sequence.
-l.6 \chapter
-            {Appendix} % (fold)
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ input line 12.
+(pdftex.def)             Requested size: 452.9679pt x 476.9967pt.
+Package epstopdf Info: Source file: <Figures/exponentialFunctionPlot.eps>
+(epstopdf)                    date: 2014-05-28 19:13:59
+(epstopdf)                    size: 9422008 bytes
+(epstopdf)             Output file: <Figures/exponentialFunctionPlot-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2014-05-28 19:14:01
+(epstopdf)                    size: 118175 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/exponentialFunctio
+nPlot-eps-converted-to.pdf Figures/exponentialFunctionPlot.eps>
+(epstopdf)             \includegraphics on input line 18.
+Package epstopdf Info: Output file is already uptodate.
 
-[5 <./Figures/deltaFunctionPlot-eps-converted-to.pdf>]) (./Sections/TwoDHeatEqu
-ation.tex [6] [7]) (./.Heat_Equation.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
-[8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+<Figures/exponentialFunctionPlot-eps-converted-to.pdf, id=82, 519.9425pt x 538.
+01pt>
+File: Figures/exponentialFunctionPlot-eps-converted-to.pdf Graphic file (type p
+df)
+<use Figures/exponentialFunctionPlot-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/exponentialFunctionPlot-eps-converted-to.pdf u
+sed on input line 18.
+(pdftex.def)             Requested size: 452.9679pt x 468.70525pt.
+[4]
+Package epstopdf Info: Source file: <Figures/deltaConservationPlot.eps>
+(epstopdf)                    date: 2014-05-28 19:34:40
+(epstopdf)                    size: 43755 bytes
+(epstopdf)             Output file: <Figures/deltaConservationPlot-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2014-05-28 19:41:19
+(epstopdf)                    size: 31767 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/deltaConservationP
+lot-eps-converted-to.pdf Figures/deltaConservationPlot.eps>
+(epstopdf)             \includegraphics on input line 29.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/deltaConservationPlot-eps-converted-to.pdf, id=94, 498.86375pt x 409.5
+3pt>
+File: Figures/deltaConservationPlot-eps-converted-to.pdf Graphic file (type pdf
+)
+<use Figures/deltaConservationPlot-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/deltaConservationPlot-eps-converted-to.pdf use
+d on input line 29.
+(pdftex.def)             Requested size: 321.61024pt x 264.02296pt.
+[5] [6 <./Figures/deltaFunctionPlot-eps-converted-to.pdf>] [7 <./Figures/expone
+ntialFunctionPlot-eps-converted-to.pdf>] [8 <./Figures/deltaConservationPlot-ep
+s-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+) [9] (./Sections/heat_equation1DL.tex [10]
+Overfull \hbox (7.13034pt too wide) in paragraph at lines 119--121
+\OT1/cmr/m/n/12 urePath = '/Users/kevin/SkyDrive/KTH Work/LaTeX Re-ports/Heat E
+qua-tion/Figures/';
+ []
+
+) (./Sections/TwoDHeatEquation.tex [11] [12] [13]) (./.Heat_Equation.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
 (./.Heat_Equation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
 Package rerunfilecheck Info: File `.Heat_Equation.out' has not changed.
-(rerunfilecheck)             Checksum: 556BC9EF27BFD63A6D2030DDB417C219;527.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
+(rerunfilecheck)             Checksum: 3EBFF44174C6882EF936E13D15C5F623;672.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 728 strings out of 484662
- 11387 string characters out of 6018415
- 209343 words of memory out of 5000000
- 12699 multiletter control sequences out of 15000+600000
- 10156 words of font info for 37 fonts, out of 8000000 for 9000
+ 777 strings out of 482777
+ 12434 string characters out of 5990571
+ 247929 words of memory out of 5000000
+ 14581 multiletter control sequences out of 15000+600000
+ 12217 words of font info for 44 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 28i,10n,28p,648b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on .Heat_Equation.pdf (8 pages, 292625 bytes).
+ 28i,16n,28p,754b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
+/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on .Heat_Equation.pdf (14 pages, 413772 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 40 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

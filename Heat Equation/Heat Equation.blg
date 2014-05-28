@@ -13,44 +13,44 @@ Database file #1: HeatEquation.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 1 entry,
+You've used 2 entries,
             4039 wiz_defined-function locations,
-            816 strings with 7358 characters,
-and the built_in function-call counts, 472 in all, are:
-= -- 27
-> -- 4
+            823 strings with 7521 characters,
+and the built_in function-call counts, 805 in all, are:
+= -- 49
+> -- 8
 < -- 0
-+ -- 2
-- -- 1
-* -- 33
-:= -- 100
-add.period$ -- 2
-call.type$ -- 1
++ -- 4
+- -- 2
+* -- 43
+:= -- 158
+add.period$ -- 4
+call.type$ -- 2
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 27
-empty$ -- 47
-format.name$ -- 1
-if$ -- 85
+cite$ -- 2
+duplicate$ -- 55
+empty$ -- 94
+format.name$ -- 2
+if$ -- 163
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 28
-num.names$ -- 1
-pop$ -- 15
+int.to.str$ -- 2
+missing$ -- 10
+newline$ -- 31
+num.names$ -- 2
+pop$ -- 31
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 33
+skip$ -- 61
 stack$ -- 0
 substring$ -- 0
-swap$ -- 14
+swap$ -- 28
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 1
+type$ -- 2
 warning$ -- 0
-while$ -- 1
-width$ -- 2
-write$ -- 32
+while$ -- 2
+width$ -- 3
+write$ -- 39

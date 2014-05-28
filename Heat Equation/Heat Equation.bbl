@@ -28,4 +28,9 @@ A.~Garcia, \emph{Numerical methods for physics}.\hskip 1em plus 0.5em minus
   \url{http://books.google.ca/books?id=MPVAAQAAIAAJ}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Demmel:1997:ANL:264989}
+J.~W. Demmel, \emph{Applied Numerical Linear Algebra}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Philadelphia, PA, USA: Society for Industrial and Applied
+  Mathematics, 1997.
+
 \end{thebibliography}
