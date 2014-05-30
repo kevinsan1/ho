@@ -67,7 +67,7 @@ set([xL,yL], 'FontSize',12);
 % end
 %% Print Plots
 fin = length(Qplot(1,:));
-maxZ = max(max(max(Qresh)))
+maxZ = max(max(max(Qresh)));
 figure('Units', 'pixels', ...
     'Position', [100 100 600 600]);clf
 %     n1 = [1 ceil(.25/(2*tau)) ceil(.25/tau)...

@@ -188,6 +188,15 @@ INPUT ./Figures/deltaConservationPlot.eps
 INPUT ./Figures/deltaConservationPlot-eps-converted-to.pdf
 INPUT ./Figures/deltaConservationPlot-eps-converted-to.pdf
 INPUT ./Figures/deltaConservationPlot-eps-converted-to.pdf
+INPUT Figures/sourceConservationPlot.eps
+INPUT ./Figures/sourceConservationPlot.eps
+INPUT ./Figures/sourceConservationPlot.eps
+INPUT ./Figures/sourceConservationPlot-eps-converted-to.pdf
+INPUT ./Figures/sourceConservationPlot-eps-converted-to.pdf
+INPUT ./Figures/sourceConservationPlot.eps
+INPUT ./Figures/sourceConservationPlot-eps-converted-to.pdf
+INPUT ./Figures/sourceConservationPlot-eps-converted-to.pdf
+INPUT ./Figures/sourceConservationPlot-eps-converted-to.pdf
 INPUT Heat Equation.bbl
 INPUT Heat Equation.bbl
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
@@ -200,6 +209,7 @@ INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb

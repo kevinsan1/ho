@@ -1,6 +1,0 @@
-PWD /Users/kevin/SkyDrive/KTH Work/Period 3 2014/DN2255/Homework/1/Heat Equation/Sections
-INPUT /usr/local/texlive/2013/texmf.cnf
-INPUT /usr/local/texlive/2013/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2013/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Section2.tex
-OUTPUT Section2.log

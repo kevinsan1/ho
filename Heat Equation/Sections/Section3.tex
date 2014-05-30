@@ -20,23 +20,20 @@
 		[htbp] \centering 
 		\includegraphics[width=
 		\textwidth]{Figures/exponentialFunctionPlot.eps} \caption{Results with Equation~\eqref{eq:sourceFunction} as the source function.} \label{fig:Figures_exponentialFunctionPlot} 
-	\end{figure}
-	
-	% (fig:Figures_exponentialFunctionPlot)
+	\end{figure}% (fig:Figures_exponentialFunctionPlot)
 	
 	\item \textbf{Convergence }
 	\item \textbf{Numerical Conservation}: Demonstrate that the method is numerically conservative by looking at 
 	\begin{equation}
 		\int q \mathrm{~d}x \mathrm{d}y = \Delta x \Delta y \sum Q_{ij} \label{eq:numConservation} 
-	\end{equation}
-	
-	% (eq:numconservation)
-	\begin{figure}
-		[htbp] \centering 
-		\includegraphics[width=\MyWidth]{Figures/deltaConservationPlot.eps} \caption{Plot of Equation~\eqref{eq:numConservation} to show conservation of the quantity $Q_{i,j}$ over time. The plot has a source term adding heat to the system, but after $t=0.25~s$, the source is shut off and the amount of Q should not change over time. We do not see this in the above solution, meaning that there is probably something wrong with the algorithm that allows for losses. The correct graph would increase like the one above, but after the source is turned off, the value of $Q_{i,j}$ should remain constant over time.} \label{fig:Figures_deltaConservationPlot} 
-	\end{figure}
-	
-	% (fig:Figures_deltaConservationPlot)
+	\end{equation}% (eq:numconservation)
+\begin{figure}
+	[htbp] \centering 
+	\subfigure[Source - Delta Function at center]{\includegraphics[width=.48\textwidth]{Figures/deltaConservationPlot.eps} \label{fig:deltaConservationPlot}} % (subfigure 1)
+	\subfigure[Source - Gaussian Distribution at center]{\includegraphics[width=.48\textwidth]{Figures/sourceConservationPlot.eps} \label{fig:sourceConservationPlot}} % (subfigure 2)
+	\caption{Plot of Equation~\eqref{eq:numConservation} to show conservation of the quantity $Q_{i,j}$ over time.  The plot has a source term adding heat to the system, but after $t=0.25~s$, the source is shut off and the amount of Q does not change over time.}
+\end{figure} % (fig:Figures_fronttrackingfig4)
+
 	\begin{itemize}
 		\item[i.] \textbf{Time-discretization and how your code handles the discontinuity in g(t)}
 		
