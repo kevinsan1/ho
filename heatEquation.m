@@ -1,5 +1,5 @@
 %% Heat_equation
-%- Program to solve the diffusion equation
+% Program to solve the diffusion equation
 % using the Backward Euler method
 %% Parameters
 clear all;close all;clc;
@@ -24,7 +24,7 @@ yExponent = (y-ys).^2;
 S = exp(-(xExponent)/w^2).*exp(-yExponent/w^2);
 deltaFunction = zeros(N);
 deltaFunction(round(N/2),round(N/2))=2;
-% S = deltaFunction;
+S = deltaFunction;
 S = reshape(S,[N^2,1]);
 %% Initialize Q-matrix
 Q = zeros(N^2,1);
@@ -125,11 +125,19 @@ end
 saveFigurePath = ['/Users/kevin/SkyDrive/KTH Work' ...
     '/Period 3 2014/DN2255/Homework/1/Heat Equation/Figures/'];
 addpath(saveFigurePath);
-printYesNo = 1;
+printYesNo = 0;
 if printYesNo == 1
     set(figure(1), 'PaperPositionMode', 'auto');
     print('-depsc2', [saveFigurePath ...
-        sprintf('sourceConservationPlot')]);
+        sprintf('deltaConservationPlot')]);
 end
-
-
+%% Save Figure 2
+saveFigurePath = ['/Users/kevin/SkyDrive/KTH Work' ...
+    '/Period 3 2014/DN2255/Homework/1/Heat Equation/Figures/'];
+addpath(saveFigurePath);
+printYesNo = 0;
+if printYesNo == 1
+    set(figure(2), 'PaperPositionMode', 'auto');
+    print('-depsc2', [saveFigurePath ...
+        sprintf('deltaFunctionPlot')]);
+end
